@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .loading {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      border-width: 8px;
+      border-style: solid;
+      border-top-color: #16C1BC;
+      border-right-color: #16C1BC;
+      border-left-color: #16C1BC;
+      border-bottom-color: #D4EBEB;
+      border-radius: 50%;
+      animation: rotating 1s linear infinite;
+    }
+
+    .loading:before,
+    .loading:after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      background-color: #16C1BC;
+      border-radius: 50%;
+    }
+
+    .loading:before {
+      left: -2.8px;
+      top: 24px;
+    }
+
+    .loading:after {
+      right: -2.8px;
+      bottom: -2px;
+    }
+
+    @keyframes rotating {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading"></div>
+</body>
+
+</html>
