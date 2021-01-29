@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #1f1f2f;
+        }
+        
+        .container {
+            -webkit-box-reflect: below 5px linear-gradient(transparent 10%, rgba(0, 0, 0, .5));
+        }
+        
+        .load {
+            width: 200px;
+            height: 200px;
+            border: 20px solid transparent;
+            border-bottom-color: #06c8f0;
+            border-right-color: #06c8f0;
+            border-radius: 50%;
+            transform: rotate(45deg);
+            animation: move 4s ease-in-out infinite alternate;
+        }
+        
+        .ball {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: move-rs 4s ease-in-out infinite alternate;
+        }
+        
+        .ball::before {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50%;
+            left: 20px;
+            bottom: 20px;
+        }
+        
+        @keyframes move {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(90deg);
+            }
+        }
+        
+        @keyframes move-rs {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(-180deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="load">
+            <div class="ball"></div>
+        </div>
+    </div>
+</body>
+
+</html>

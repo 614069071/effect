@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #switch {
+            display: none;
+        }
+        
+        #switch:checked+.swicth-wrapper .switch-btn {
+            /* left: 42px; */
+            animation: move .35s forwards;
+        }
+        
+        .swicth-wrapper {
+            display: block;
+            width: 80px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: lightblue;
+            position: relative;
+        }
+        
+        .switch-btn {
+            width: 34px;
+            height: 34px;
+            background-color: yellow;
+            position: absolute;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+            cursor: pointer;
+            animation: move2 .35s forwards;
+        }
+        
+        @keyframes move {
+            0% {
+                left: 3px;
+                width: 34px;
+            }
+            30% {
+                /* left: 3px; */
+                width: 40px;
+            }
+            100% {
+                width: 34px;
+                left: 42px;
+            }
+        }
+        
+        @keyframes move2 {
+            0% {
+                left: 42px;
+                width: 34px;
+            }
+            30% {
+                width: 40px;
+            }
+            100% {
+                width: 34px;
+                left: 3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" id="switch" checked>
+        <label for="switch" class="swicth-wrapper">
+          <span class="switch-btn"></span>
+        </label>
+    </div>
+</body>
+
+</html>
