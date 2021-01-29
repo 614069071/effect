@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -77,6 +78,95 @@
             <div class="ball"></div>
         </div>
     </div>
+=======
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      width: 564px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .item {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      transform: rotate(-45deg);
+      animation: move 1s linear infinite;
+      border-radius: 10px;
+      animation-delay: calc(5 - var(--i)) * -1s;
+      background-color: pink;
+      background-color: var(--color);
+    }
+
+
+    .item::before {
+      content: "";
+      width: 100px;
+      height: 100px;
+      background-color: var(--color);
+      position: absolute;
+      left: 0;
+      top: -110px;
+      animation: show 4s steps(1, end) infinite;
+      animation-delay: calc((5 - var(--i)) * -1s);
+      border-radius: 10px;
+    }
+
+    @keyframes move {
+      0% {
+        transform: rotate(-45deg);
+      }
+
+      100% {
+        transform: rotate(45deg);
+      }
+    }
+
+    @keyframes show {
+      0% {
+        opacity: 1;
+      }
+
+      25% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 0;
+      }
+
+      75% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item" style="--i:1;--color:#00b894"></div>
+    <div class="item" style="--i:2;--color:#fdcb6e"></div>
+    <div class="item" style="--i:3;--color:#e056fd"></div>
+    <div class="item" style="--i:4;--color:#f97f51"></div>
+  </div>
+>>>>>>> b92d9c62e24fdd6eb2a997b492ac422dd7aaf3f6
 </body>
 
 </html>
