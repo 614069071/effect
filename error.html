@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .error-wrapper {
+      --ch: 100px;
+      --cw: 17px;
+      --ct: 0.5s;
+    }
+
+    .error-inner {
+      position: relative;
+      width: var(--ch);
+      height: var(--ch);
+      transform: rotate(45deg);
+
+    }
+
+    .error-inner::before,
+    .error-inner::after {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+
+    .error-inner::before {
+      width: var(--cw);
+      height: 0px;
+      background-color: red;
+      animation: hc var(--ct) var(--ct) forwards;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .error-inner::after {
+      width: 0px;
+      height: var(--cw);
+      background-color: red;
+      animation: wc var(--ct) forwards;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @keyframes wc {
+      to {
+        width: var(--ch);
+      }
+    }
+
+    @keyframes hc {
+      to {
+        height: var(--ch);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="error-wrapper">
+    <div class="error-inner"></div>
+  </div>
+</body>
+
+</html>
