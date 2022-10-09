@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div :style="{ width: 140 * list[0].length + 'px' }" class="list-wrapper">
-      <div v-for="(a, b) in list" :key="b" :class="b % 2 ? 'right' : ''" :style="{ width: 140 * list[0].length + 'px' }" class="wrapper">
+      <div v-for="(a, b) in list" :key="b" :class="{ reverse: b % 2 }" :style="{ width: 140 * list[0].length + 'px' }" class="wrapper">
         <div v-for="(c, d) in a" :key="d" class="item">
           <div :class="{ right: b % 2 ? d > 0 : d !== a.length - 1, top: d === 0 && b !== 0 }" class="item-inner"></div>
           <div class="item-des">
@@ -188,7 +188,7 @@ export default {
   position: relative;
 }
 
-.wrapper.right {
+.wrapper.reverse {
   flex-direction: row-reverse;
 }
 
