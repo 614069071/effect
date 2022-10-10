@@ -3,7 +3,7 @@
     <div :style="{ width: 140 * list[0].length + 'px' }" class="list-wrapper">
       <div v-for="(a, b) in list" :key="b" :class="{ reverse: b % 2 }" :style="{ width: 140 * list[0].length + 'px' }" class="wrapper">
         <div v-for="(c, d) in a" :key="d" class="item">
-          <div :class="{ right: b % 2 ? d : d !== a.length - 1, top: !d && b }" class="item-inner"></div>
+          <div :class="{ right: b % 2 ? d : d < a.length - 1, top: !d && b }" class="item-inner"></div>
           <div class="item-des">
             <div>{{ c.ResultStatusDesc }}</div>
             <div>{{ c.Doctor }}</div>
