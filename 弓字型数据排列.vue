@@ -3,7 +3,7 @@
     <div :style="{ width: 140 * list[0].length + 'px' }" class="list-wrapper">
       <div v-for="(a, b) in list" :key="b" :class="{ reverse: b % 2 }" :style="{ width: 140 * list[0].length + 'px' }" class="wrapper">
         <div v-for="(c, d) in a" :key="d" class="item">
-          <div :class="{ right: b % 2 ? d > 0 : d !== a.length - 1, top: d === 0 && b !== 0 }" class="item-inner"></div>
+          <div :class="{ right: b % 2 ? d : d !== a.length - 1, top: !d && b }" class="item-inner"></div>
           <div class="item-des">
             <div>{{ c.ResultStatusDesc }}</div>
             <div>{{ c.Doctor }}</div>
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'gua',
+  name: 'bow-chart',
   data() {
     return {
       colle: [
@@ -149,22 +149,26 @@ export default {
     const width = 140;
 
     const change = () => {
-      const w = document.body.clientWidth;
-      const g = Math.floor(w / width);
-      const list = [];
-      const len = this.colle.length;
-      const l = Math.ceil(len / g);
+      const a = document.body.clientWidth;
+      const b = Math.floor(a / width);
+      const c = this.colle.length;
+      const d = Math.ceil(c / b);
+      const e = [];
 
-      for (let i = 0; i < l; i++) {
-        list.push(this.colle.slice(i * g, i * g + g));
+      for (let i = 0; i < d; i++) {
+        e.push(this.colle.slice(i * b, i * b + b));
       }
 
-      this.list = list;
+      this.list = e;
     };
 
     change();
 
     window.addEventListener('resize', change);
+
+    const arr = Array(5);
+
+    arr.forEach((v, i) => console.log('v => ', v, i));
   },
 };
 </script>
