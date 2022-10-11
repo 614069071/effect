@@ -16,116 +16,117 @@
 </template>
 
 <script>
+const colle = [
+  {
+    ind: '1',
+    des: '申请',
+    date: '2022-06-1',
+    doctor: '何诚',
+  },
+  {
+    ind: '2',
+    des: '登记',
+    date: '2022-06-2',
+    doctor: '何诚',
+  },
+  {
+    ind: '3',
+    des: '报告录入',
+    date: '2022-06-3',
+    doctor: '邵婧',
+  },
+  {
+    ind: '4',
+    des: '报告审核',
+    date: '2022-06-4',
+    doctor: '邵婧',
+  },
+  {
+    ind: '5',
+    des: '报告发布',
+    date: '2022-06-5',
+    doctor: '邵婧',
+  },
+  {
+    ind: '1',
+    des: '申请',
+    date: '2022-06-6',
+    doctor: '何诚',
+  },
+  {
+    ind: '2',
+    des: '登记',
+    date: '2022-06-7',
+    doctor: '何诚',
+  },
+  {
+    ind: '3',
+    des: '报告录入',
+    date: '2022-06-8',
+    doctor: '邵婧',
+  },
+  {
+    ind: '4',
+    des: '报告审核',
+    date: '2022-06-9',
+    doctor: '邵婧',
+  },
+  {
+    ind: '5',
+    des: '报告发布',
+    date: '2022-06-10',
+    doctor: '邵婧',
+  },
+  {
+    ind: '1',
+    des: '申请',
+    date: '2022-06-11',
+    doctor: '何诚',
+  },
+  {
+    ind: '2',
+    des: '登记',
+    date: '2022-06-12',
+    doctor: '何诚',
+  },
+  {
+    ind: '3',
+    des: '报告录入',
+    date: '2022-06-13',
+    doctor: '邵婧',
+  },
+  {
+    ind: '4',
+    des: '报告审核',
+    date: '2022-06-14',
+    doctor: '邵婧',
+  },
+  {
+    ind: '5',
+    des: '报告发布',
+    date: '2022-06-15',
+    doctor: '邵婧',
+  },
+];
+
 export default {
   name: 'bow-chart',
   data() {
     return {
-      colle: [
-        {
-          ind: '1',
-          des: '申请',
-          date: '2022-06-1',
-          doctor: '何诚',
-        },
-        {
-          ind: '2',
-          des: '登记',
-          date: '2022-06-2',
-          doctor: '何诚',
-        },
-        {
-          ind: '3',
-          des: '报告录入',
-          date: '2022-06-3',
-          doctor: '邵婧',
-        },
-        {
-          ind: '4',
-          des: '报告审核',
-          date: '2022-06-4',
-          doctor: '邵婧',
-        },
-        {
-          ind: '5',
-          des: '报告发布',
-          date: '2022-06-5',
-          doctor: '邵婧',
-        },
-        {
-          ind: '1',
-          des: '申请',
-          date: '2022-06-6',
-          doctor: '何诚',
-        },
-        {
-          ind: '2',
-          des: '登记',
-          date: '2022-06-7',
-          doctor: '何诚',
-        },
-        {
-          ind: '3',
-          des: '报告录入',
-          date: '2022-06-8',
-          doctor: '邵婧',
-        },
-        {
-          ind: '4',
-          des: '报告审核',
-          date: '2022-06-9',
-          doctor: '邵婧',
-        },
-        {
-          ind: '5',
-          des: '报告发布',
-          date: '2022-06-10',
-          doctor: '邵婧',
-        },
-        {
-          ind: '1',
-          des: '申请',
-          date: '2022-06-11',
-          doctor: '何诚',
-        },
-        {
-          ind: '2',
-          des: '登记',
-          date: '2022-06-12',
-          doctor: '何诚',
-        },
-        {
-          ind: '3',
-          des: '报告录入',
-          date: '2022-06-13',
-          doctor: '邵婧',
-        },
-        {
-          ind: '4',
-          des: '报告审核',
-          date: '2022-06-14',
-          doctor: '邵婧',
-        },
-        {
-          ind: '5',
-          des: '报告发布',
-          date: '2022-06-15',
-          doctor: '邵婧',
-        },
-      ],
       row: [[]],
     };
   },
   mounted() {
-    const width = 140;
+    const w = 140;
+    const l = colle.length;
 
     const change = () => {
       const a = document.body.clientWidth;
-      const b = Math.floor(a / width);
-      const c = this.colle.length;
-      const d = Math.ceil(c / b);
-      const e = Array(d).fill('');
+      const b = Math.floor(a / w);
+      const c = Math.ceil(l / b);
+      const d = Array(c).fill('');
 
-      this.row = e.map((v, i) => this.colle.slice(i * b, i * b + b));
+      this.row = d.map((v, i) => colle.slice(i * b, i * b + b));
     };
 
     change();
